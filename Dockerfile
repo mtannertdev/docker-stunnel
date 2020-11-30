@@ -8,9 +8,9 @@ COPY ./bin /usr/local/bin
 RUN apk add --no-cache bash openssl openssl-dev gcc musl-dev make
 
 WORKDIR /src
-RUN wget ftp://ftp.stunnel.org/stunnel/archive/5.x/stunnel-5.56.tar.gz
-RUN tar -xvf stunnel-5.56.tar.gz
-WORKDIR /src/stunnel-5.56
+RUN wget https://www.stunnel.org/downloads/stunnel-5.57.tar.gz
+RUN tar -xvf stunnel-5.57.tar.gz
+WORKDIR /src/stunnel-5.57
 RUN ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var && make && make install
 
 WORKDIR /
